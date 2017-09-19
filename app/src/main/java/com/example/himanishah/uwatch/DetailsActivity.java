@@ -5,9 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.himanishah.uwatch.POJO.Movie;
+import com.example.himanishah.uwatch.Retrofit.ApiUtils;
+import com.example.himanishah.uwatch.Retrofit.ExampleApi;
 import com.squareup.picasso.Picasso;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -21,7 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     TextView movieReleaseView;
     TextView moviePlotView;
     TextView movieTitleView;
-
+    private ExampleApi mExampleApi;
     /*
      * Constants
      */
@@ -42,7 +47,7 @@ public class DetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intentThatStartedThisActivity = getIntent();
-
+        mExampleApi = ApiUtils.getExampleApi();
         //Assign the views that will be populated with the movie's data
         moviePosterView = (ImageView) findViewById(R.id.movie_details_poster_view);
         movieTitleView = (TextView) findViewById(R.id.movie_title_view);
@@ -127,6 +132,11 @@ public class DetailsActivity extends AppCompatActivity {
         } else {
             view.setText(NOT_AVAILABLE);
         }
+    }
+    public void moviePosterClicked(View v){
+
+        Log.d("aaaa", movieTitleView.getText().toString());
+        mExampleApi.getMovieId(movieTitleView.getText().toString()).
     }
 }
 

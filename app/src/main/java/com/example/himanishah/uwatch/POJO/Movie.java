@@ -1,4 +1,4 @@
-package com.example.himanishah.uwatch;
+package com.example.himanishah.uwatch.POJO;
 
 /**
  * Created by himanishah on 9/15/17.

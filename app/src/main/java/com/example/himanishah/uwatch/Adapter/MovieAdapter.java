@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import com.example.himanishah.uwatch.Movie;
+import com.example.himanishah.uwatch.POJO.Movie;
 import com.example.himanishah.uwatch.R;
 import com.example.himanishah.uwatch.RectangularImageView;
 import com.squareup.picasso.Picasso;

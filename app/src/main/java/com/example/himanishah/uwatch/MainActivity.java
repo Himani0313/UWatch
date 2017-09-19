@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.example.himanishah.uwatch.Adapter.MovieAdapter;
+import com.example.himanishah.uwatch.POJO.Movie;
 import com.example.himanishah.uwatch.Utils.NetworkUtils;
 
 import org.json.JSONArray;
