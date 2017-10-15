@@ -1,52 +1,57 @@
 package com.example.himanishah.uwatch.Adapter;
 
+/**
+ * Created by himanishah on 9/16/17.
+ */
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.example.himanishah.uwatch.Activities.MainActivity;
 import com.example.himanishah.uwatch.Activities.MovieDetailActivity;
 import com.example.himanishah.uwatch.Model.MoviesData;
+
 import com.example.himanishah.uwatch.R;
 import com.example.himanishah.uwatch.Utils.VolleySingleton;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+
 import java.util.ArrayList;
 
-/**
- * Created by dhruvinpatel on 10/15/17.
- */
-
-public class FavouriteMoviesAdapter extends RecyclerView.Adapter<FavouriteMoviesAdapter.ViewHolderMovies>{
+public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolderMovies> {
 
     private LayoutInflater layoutInflater;
-    private ArrayList<MoviesData> movieList = new ArrayList<>();
+    private ArrayList<MoviesData> moviesList = new ArrayList<>();
     private VolleySingleton volleySingleton;
     private ImageLoader imageLoader;
     private Context context;
     private boolean mTwoPane = false;
-    private MovieAdapterOnClickHandler mClickHandler;
+    private MovieAdapterOnClickHandler clickHandler;
+    private int value;
 
-    public FavouriteMoviesAdapter(ArrayList<MoviesData> movieList, Context context, MovieAdapterOnClickHandler vh){
-        this.movieList = movieList;
-        this.context = context;
+    public MoviesAdapter(ArrayList<MoviesData> moviesList, Context context, MovieAdapterOnClickHandler vh){
+        layoutInflater = LayoutInflater.from(context);
         volleySingleton = VolleySingleton.getsInstance();
         imageLoader = volleySingleton.getImageLoader();
-        layoutInflater = LayoutInflater.from(context);
+        this.moviesList = moviesList;
+        this.context = context;
         this.mTwoPane = MainActivity.twoPane;
-        this.mClickHandler = vh;
+        this.clickHandler = vh;
+        value = 0;
     }
 
     @Override
     public ViewHolderMovies onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.adapter_favourite_movies, parent, false);
+        View view = layoutInflater.inflate(R.layout.adapter_movies, parent, false);
         ViewHolderMovies viewHolder = new ViewHolderMovies(view);
         return viewHolder;
     }
@@ -54,12 +59,7 @@ public class FavouriteMoviesAdapter extends RecyclerView.Adapter<FavouriteMovies
     @Override
     public void onBindViewHolder(final ViewHolderMovies holder, int position) {
 
-        MoviesData currentMovie = movieList.get(position);
-
-        holder.textTitle.setText(currentMovie.getTitle());
-        holder.textGenre.setText(currentMovie.getGenre());
-        holder.textPopularity.setText(String.format("%.1f", currentMovie.getPopularity()) + "");
-        holder.textRating.setText(String.format("%.1f", currentMovie.getRating()) + "");
+        MoviesData currentMovie = moviesList.get(position);
 
         String thumbnail = currentMovie.getImage();
 
@@ -71,41 +71,35 @@ public class FavouriteMoviesAdapter extends RecyclerView.Adapter<FavouriteMovies
 
     @Override
     public int getItemCount() {
-        return movieList.size();
+        return moviesList.size();
     }
 
     public class ViewHolderMovies extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private SimpleDraweeView movieThumbnail;
-        private TextView textTitle, textGenre, textPopularity, textRating;
-        private Typeface typeface;
 
         public ViewHolderMovies(View view) {
             super(view);
             view.setOnClickListener(this);
             movieThumbnail = (SimpleDraweeView) view.findViewById(R.id.ivThumbnail);
-            textTitle = (TextView) view.findViewById(R.id.tvTitle);
-            textGenre = (TextView) view.findViewById(R.id.tvGenre);
-            textPopularity = (TextView) view.findViewById(R.id.tvMoviePopularity);
-            textRating = (TextView) view.findViewById(R.id.tvMovieRating);
 
-            typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Geomanist_Regular.otf");
 
-            textTitle.setTypeface(typeface);
-            textGenre.setTypeface(typeface);
-            textPopularity.setTypeface(typeface);
+            if(value == 0 && mTwoPane){
+                clickHandler.onClick(moviesList.get(0).getId() + "", this);
+                value = 1;
+            }
         }
 
         @Override
         public void onClick(View v) {
-            if(mTwoPane == false){
-                Intent intent = new Intent(v.getContext(), MovieDetailActivity.class);
-                intent.putExtra("movieID", movieList.get(getAdapterPosition()).getId()+"");
-                intent.putExtra("fragmentId", 2);
-                v.getContext().startActivity(intent);
 
-            }else if(mTwoPane == true){
-                mClickHandler.onClick(movieList.get(getAdapterPosition()).getId() + "", this);
+            if(!mTwoPane) {
+                Intent intent = new Intent(v.getContext(), MovieDetailActivity.class);
+                intent.putExtra("movieID", moviesList.get(getAdapterPosition()).getId() + "");
+                intent.putExtra("fragmentId", 0);
+                v.getContext().startActivity(intent);
+            }else if(mTwoPane){
+                clickHandler.onClick(moviesList.get(getAdapterPosition()).getId() + "", this);
             }
         }
     }
@@ -114,4 +108,3 @@ public class FavouriteMoviesAdapter extends RecyclerView.Adapter<FavouriteMovies
         void onClick(String movieId, RecyclerView.ViewHolder vh);
     }
 }
-

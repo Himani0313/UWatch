@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bowyer.app.fabtoolbar.FabToolbar;
+import com.example.himanishah.uwatch.Fragments.FavouriteMoviesFragment;
+import com.example.himanishah.uwatch.Fragments.MoviesFragment;
 import com.example.himanishah.uwatch.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -155,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 

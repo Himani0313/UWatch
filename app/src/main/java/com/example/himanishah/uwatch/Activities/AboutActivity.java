@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.himanishah.uwatch.R;
+
 
 public class AboutActivity extends AppCompatActivity {
 

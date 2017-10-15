@@ -30,8 +30,8 @@
 
         <provider
             android:name=".Utils.MoviesProvider"
-            android:authorities="udacity.prithvi.movies"
-            android:exported="true" />
+            android:authorities="com.example.himanishah.uwatch"
+            android:exported="false" />
 
     </application>
 </manifest>

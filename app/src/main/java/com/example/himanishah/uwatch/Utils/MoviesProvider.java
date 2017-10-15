@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class MoviesProvider extends ContentProvider {
 
-    public static final String CONTENT_AUTHORITY = "udacity.prithvi.movies";
+    public static final String CONTENT_AUTHORITY = "com.example.himanishah.uwatch";
     public static final String URL = "content://" + CONTENT_AUTHORITY + "/movies";
     public static final Uri BASE_CONTENT_URI = Uri.parse(URL);
 
