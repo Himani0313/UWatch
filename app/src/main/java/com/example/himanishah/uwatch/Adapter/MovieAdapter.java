@@ -13,7 +13,6 @@ import android.widget.ImageView;
 
 import com.example.himanishah.uwatch.POJO.Movie;
 import com.example.himanishah.uwatch.R;
-import com.example.himanishah.uwatch.RectangularImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -1,25 +1,55 @@
 <resources>
     <string name="app_name">UWatch</string>
 
-    <!--Spinner-->
-    <string-array name="sorting_options_array">
-        <item>Most Popular</item>
-        <item>Top Rated</item>
-    </string-array>
+    <!--Activities-->
+    <string name="detail_movie_activity">DetailMovie</string>
+    <string name="about_activity">About</string>
 
-    <!--DIALOG-->
-    <string name="connection_dialog_title">WARNING</string>
-    <string name="connection_dialog_message">No Internet connection available. Please reconnect and try again.</string>
-    <string name="ok">OK</string>
+    <!--Main_menu-->
+    <string name="about">About</string>
 
-    <!--DETAILS ACTIVITY-->
-    <string name="vote_average">Rating</string>
-    <string name="release_date">Released</string>
-    <string name="poster_description">Movie poster</string>
-    <string name="plot">Plot</string>
+    <!--Fab items-->
+    <string name="popular">Popular</string>
+    <string name="highestRated">Highest Rated</string>
+    <string name="favourite">Favourite</string>
 
-    <!--TEST-->
-    <string name="title">Pirates of the Carribean: Dean Men\'s chest</string>
-    <string name="loremipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</string>
+    <!--XML Files-->
+    <!--activity_about-->
+    <string name="movies">Movies</string>
+    <string name="description1">Movies is developed as a project for the Udacity\'s Android Nanodegree course.</string>
+    <string name="description2">Movies fetches data from themoviedb.org to get movie data and images.</string>
+    <string name="developer">Movies is written by Prithvi Bhola.</string>
+    <string name="google">Google+</string>
+    <string name="github">The source code is available on Github</string>
+
+    <!--holder_movie_details-->
+    <string name="popular1">POPULAR</string>
+    <string name="rating">RATING</string>
+    <string name="share">SHARE</string>
+
+    <!--fragment_no_connection-->
+    <string name="no_connection">No Connection!</string>
+    <string name="connection_confirm">Please make sure that you are connected to the internet.</string>
+
+    <!--fragment_favourite_movies-->
+    <string name="liked_movies">Your liked movies appear here.</string>
+
+    <!--Activities-->
+
+    <!--MovieDetailAdapter-->
+    <string name="duration">Duration:</string>
+    <string name="hour">hr</string>
+    <string name="minutes">min</string>
+    <string name="genre">Genre:</string>
+    <string name="language">Language:</string>
+    <string name="share_via">Share via</string>
+    <string name="watch">Watch</string>
+    <string name="releasing_on">Releasing on</string>
+
+    <!--Fragments-->
+    <!--MovieDetailFragment-->
+    <string name="removed">Removed</string>
+    <string name="liked">Liked</string>
+    <string name="heart">\u2764</string>
+
 </resources>
