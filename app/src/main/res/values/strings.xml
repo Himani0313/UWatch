@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UWatch</string>
+    <string name="app_name">Movies</string>
 
     <!--Activities-->
     <string name="detail_movie_activity">DetailMovie</string>

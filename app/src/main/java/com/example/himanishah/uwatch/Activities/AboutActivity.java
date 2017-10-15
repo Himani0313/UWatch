@@ -3,7 +3,6 @@ package com.example.himanishah.uwatch.Activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.himanishah.uwatch.R;
 
 public class AboutActivity extends AppCompatActivity {
 
