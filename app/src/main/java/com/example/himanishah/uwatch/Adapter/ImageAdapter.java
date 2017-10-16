@@ -47,7 +47,7 @@ public class ImageAdapter extends BaseAdapter {
             imageview = (ImageView) convertView;
         }
 
-        Picasso.with(mContext).load(images.get(position)).placeholder(R.drawable.videoplayer).into(imageview);
+        Picasso.with(mContext).load(images.get(position)).placeholder(R.mipmap.ic_placeholder).into(imageview);
         return imageview;
     }
 

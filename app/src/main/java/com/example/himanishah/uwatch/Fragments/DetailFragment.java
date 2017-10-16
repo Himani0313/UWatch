@@ -175,7 +175,7 @@ public class DetailFragment extends Fragment {
 
         ((TextView) curView.findViewById(R.id.detailTextView)).setText(movie.display_name);
         Picasso.with(getContext()).load(movie.poster_url).
-                placeholder(R.drawable.videoplayer).into((ImageView) curView.findViewById(R.id.posterImageView));
+                placeholder(R.mipmap.ic_placeholder).into((ImageView) curView.findViewById(R.id.posterImageView));
         ((TextView) curView.findViewById(R.id.overviewTextView)).setText(movie.overview);
         ((RatingBar) curView.findViewById(R.id.rating)).setRating(movie.rating / 2f);
         ((TextView) curView.findViewById(R.id.ratingTextView)).setText((float) Math.round(movie.rating*10d)/10d + "/10");
