@@ -31,7 +31,7 @@
                   android:layout_height="match_parent">
 
         <fragment android:id="@+id/fragment"
-                  android:name="com.example.himanishah.uwatch.Fragments.MainActivityFragment"
+                  android:name="com.hjs.himanishah.uwatch.Fragments.MainActivityFragment"
                   android:layout_width="0dp"
                   android:layout_weight="1"
                   android:layout_height="match_parent"

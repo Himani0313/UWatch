@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.himanishah.uwatch">
+    package="com.hjs.himanishah.uwatch">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -38,7 +38,7 @@
         </activity>
         <provider
             android:name=".Utils.MovieProvider"
-            android:authorities="com.example.himanishah.uwatch"
+            android:authorities="com.hjs.himanishah.uwatch"
             android:enabled="true"
             android:exported="true">
         </provider>
